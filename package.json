@@ -1,0 +1,19 @@
+{
+  "name": "posmotri_v_okno",
+  "version": "1.0.0",
+  "description": "Проект \"Посмотри в окно\"\r https://github.com/1ShadowDemon1/posmotri_v_okno.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Привет!'",
+    "check": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'",
+    "lint": "stylelint '**/*.css'",
+    "lintfix": "stylelint '**/*.css' --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.1.0",
+    "stylelint": "^15.11.0"
+  }
+}

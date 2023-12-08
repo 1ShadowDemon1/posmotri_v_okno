@@ -9,16 +9,16 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -46,9 +46,9 @@ ol {
 
 .content {
   display: flex;
-  margin: auto;
-  gap: 30px;
   align-items: end;
+  gap: 30px;
+  margin: auto;
   inline-size: 1140px;
 }
 
@@ -60,10 +60,10 @@ ol {
 }
 
 .result__video-container {
-  width: 710px;
-  height: 385px;
   position: relative;
   inset: 0;
+  width: 710px;
+  height: 385px;
 }
 
 .result__video {
@@ -81,9 +81,9 @@ ol {
 .search-form__fieldset-title {
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
 }
 
@@ -95,31 +95,31 @@ ol {
 
 .search-form__label {
   display: flex;
-  gap: 5px;
   align-items: center;
+  gap: 5px;
   cursor: pointer;
 }
 
 .search-form__label-text {
-  color: #FFF;
+  color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
 }
 
 .search-form__textfield {
-  background-color: transparent;
+  min-width: 225px;
   border: none;
+  padding-bottom: 2px;
   color: rgba(255, 255, 255, 0.7);
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
-  min-width: 225px;
-  padding-bottom: 2px;
+  background-color: transparent;
   appearance: none;
 }
 
@@ -143,52 +143,56 @@ ol {
   border-bottom: 1px solid #fff;
 }
 
-
 .visually-hidden {
   position: absolute; /* элемент вырывают из потока */
   width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
   height: 1px;
   margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
-  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
   border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
-  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
   overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+  clip: rect(
+    0 0 0 0
+  ); /* это свойство обрезает видимую область до нулевого значения */
 }
 
 .search-form__pseudo-checkbox {
   display: inline-block;
   width: 19px;
   height: 19px;
+  border: 1px solid #fff;
   vertical-align: middle;
   background-color: transparent;
-  border: 1px solid #fff;
 }
 
-.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
-  content: '';
+.search-form__checkbox[type="checkbox"]:checked
+  + .search-form__pseudo-checkbox::after {
+  content: "";
   display: flex;
-  margin: auto;
-  margin-top: 2px;
   width: 13px;
   height: 13px;
+  margin: auto;
+  margin-top: 2px;
   background-color: #fff;
 }
 
-.search-form__submit-button {
-  background-color: transparent;
-  padding: 6px 73px;
+.button {
+  max-height: 34px;
   border: 1px solid #fff;
   color: #fff;
-  text-align: center;
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
   font-size: 18px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
-  max-height: 34px;
-  display: flex;
-  align-self: flex-end;
+  text-align: center;
+  background-color: transparent;
   cursor: pointer;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  padding: 6px 73px;
 }
 
 .content__details {
@@ -201,9 +205,9 @@ ol {
 .title {
   color: #fff;
   font-family: "Oswald", sans-serif;
+  font-weight: 700;
   font-size: 75px;
   font-style: normal;
-  font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
 }
@@ -213,20 +217,18 @@ ol {
 }
 
 .content__list {
-  display: flex;
-  flex-direction: column;
-  overflow: overlay;
   position: relative;
   inset: 0;
+  display: flex;
+  flex-direction: column;
   min-width: 399px;
-  padding-right: 2px;
+  overflow: overlay;
 }
 
 .content__list-item:not(:last-child) {
-  margin-bottom: 31px;
   min-width: 399px;
+  margin-bottom: 33px;
 }
-
 
 .content__video-card {
   display: flex;
@@ -234,59 +236,52 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
+  width: 195px;
+  height: 100px;
   object-fit: cover;
   object-position: bottom right;
 }
 
 .content__video-card-title {
+  margin-bottom: 5px;
+  overflow: hidden;
   color: #fff;
   font-family: "Oswald", sans-serif;
+  font-weight: 700;
   font-size: 30px;
   font-style: normal;
-  font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .content__video-card-description {
+  overflow: hidden;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: 16.2px;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .content__card-link {
-  text-decoration: none;
+  display: block;
   border: 1px solid transparent;
   padding: 1px;
-  display: block;
+  text-decoration: none;
 }
 
 .more-button {
-
-  background-color: #1B1919;
   width: 100%;
   padding: 5px 0;
-  border: 1px solid #fff;
-  color: #fff;
-  text-align: center;
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  max-height: 34px;
-  align-self: flex-end;
-  margin-bottom: 1px;
-  cursor: pointer;
 }
 
-.search-form__label:has(:focus-visible) {  /* Изминение search-form при TAB */
+.search-form__label:has(:focus-visible) {
+  /* Изминение search-form при TAB */
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
@@ -301,68 +296,69 @@ ol {
 }
 
 .content__list-item:active {
-  background-color: #545050;
-  text-decoration: none;
   outline: none;
+  text-decoration: none;
+  background-color: #545050;
 }
 
-.content__list::-webkit-scrollbar { /* изменения фона scrollbar */
+.content__list::-webkit-scrollbar {
+  /* изменения фона scrollbar */
+  width: 6px;
+  border-radius: 30px;
   background-color: #000;
-  border-radius: 30px;
-  width: 10px;
 }
 
-.content__list::-webkit-scrollbar-thumb { /* изменения scrollbar */
-  background-color: #fff;
+.content__list::-webkit-scrollbar-thumb {
+  /* изменения scrollbar */
   border-radius: 30px;
+  background-color: #fff;
 }
 
 .search-form__textfield:focus-visible {
-  outline: -webkit-focus-ring-color auto 0;  /* Отключение браузрной обводк search-form  */
+  outline: -webkit-focus-ring-color auto 0; /* Отключение браузрной обводк search-form  */
 }
 
 .search-form__label-text:active {
   text-decoration: none;
 }
 
- /*псевдо классы для кнопок*/
+/*псевдо классы для кнопок*/
 .button:hover {
   text-decoration: underline 1px solid #fff;
 }
 
 .button:active {
-  background-color: #545050;
   text-decoration: none;
+  background-color: #545050;
 }
 
-.button:focus-visible{  /* Состояние focus для кнопок*/
+.button:focus-visible {
+  /* Состояние focus для кнопок*/
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
 .content__card-link:focus-visible {
+  display: block;
   border: 1px solid #fff;
   outline: none;
   appearance: none;
-  display: block;
 }
 
 /* ТЕсты*/
 
-.search-form__checkbox-list > .search-form__label:hover:has(.search-form__label-text) {
+.search-form__checkbox-list
+  > .search-form__label:hover:has(.search-form__label-text) {
   text-decoration: underline 1px solid #fff;
 }
 
-.search-form__checkbox-list > .search-form__label:active:has(.search-form__label-text) {
+.search-form__checkbox-list
+  > .search-form__label:active:has(.search-form__label-text) {
   text-decoration: none;
 }
 
-
 .content__video-card-description-container {
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow: hidden;
   flex-grow: 1;
-  max-width: 195px;
-  padding-right: 5px;
+  max-width: 200px;
+  overflow: hidden;
 }
